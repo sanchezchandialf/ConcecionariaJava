@@ -30,7 +30,13 @@ public class Motocicleta extends Vehiculo{
         this.cilindrada = cilindrada;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Motocicleta{" + "marcasmoto=" + marcasmoto + ", cilindrada=" + cilindrada + '}';
+    }
+
+     
+
     
     
 }

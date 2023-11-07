@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.io.*;
 
 public class Administracion {
-    private HashMap<Integer, Automovil> autos;
+    HashMap<Integer, Automovil> autos;
     private HashMap<Integer, Motocicleta> motos;
 
     public Administracion() {
