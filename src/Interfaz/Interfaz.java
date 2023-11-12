@@ -47,6 +47,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         TextMensaje = new javax.swing.JTextField();
         Enviar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -61,7 +62,6 @@ public class Interfaz extends javax.swing.JFrame {
         FondoAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo-azul1.png"))); // NOI18N
         FondoAzul.setText("jLabel1");
         FondoAzul.setMaximumSize(new java.awt.Dimension(300, 600));
-        FondoAzul.setPreferredSize(new java.awt.Dimension(2431, 1649));
         Background.add(FondoAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(531, 0, 430, -1));
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 36)); // NOI18N
@@ -133,6 +133,15 @@ public class Interfaz extends javax.swing.JFrame {
         });
         Background.add(Enviar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 130, 40));
 
+        jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel7.setText("VOLVER");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 580, -1, -1));
+
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -165,6 +174,13 @@ public class Interfaz extends javax.swing.JFrame {
         e.printStackTrace();
     }
     }//GEN-LAST:event_EnviarMouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        Inicio ini=new Inicio();
+        ini.setVisible(true);
+        this.dispose(); 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -215,6 +231,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
