@@ -238,8 +238,8 @@ public class CITROEN extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void botonVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVolverMouseClicked
-        Interfaz interfaz=new Interfaz();
-        interfaz.setVisible(true);
+        Inicio in=new Inicio();
+        in.setVisible(true);
         this.dispose();    
 
         // TODO add your handling code here:
