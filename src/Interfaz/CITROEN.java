@@ -54,6 +54,8 @@ public class CITROEN extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         botonVolver = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -98,7 +100,7 @@ public class CITROEN extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(153, 153, 153));
         jLabel10.setText("C4");
         jLabel10.setName("jLabel10"); // NOI18N
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 30, 40));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 180, 30, 40));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Baskerville Old Face", 0, 24)); // NOI18N
@@ -224,6 +226,12 @@ public class CITROEN extends javax.swing.JFrame {
         });
         jPanel2.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
 
+        jSeparator1.setName("jSeparator1"); // NOI18N
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 790, 20));
+
+        jSeparator2.setName("jSeparator2"); // NOI18N
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 770, 20));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 600));
 
         pack();
@@ -312,5 +320,7 @@ public class CITROEN extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

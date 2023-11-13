@@ -140,7 +140,7 @@ public class Interfaz extends javax.swing.JFrame {
                 jLabel7MouseClicked(evt);
             }
         });
-        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 580, -1, -1));
+        Background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 520, -1, -1));
 
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
