@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Taller
+comment1.params=
+comment1.target=Taller()
+comment2.params=autos
+comment2.target=void\ recibirAutos(java.util.HashMap)
+comment3.params=
+comment3.target=java.util.HashMap\ getAutosEnTaller()
+comment4.params=
+comment4.target=void\ imprimirAutosEnTaller()
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

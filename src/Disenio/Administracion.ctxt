@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Administracion
+comment1.params=
+comment1.target=Administracion()
+comment10.params=args
+comment10.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ guardarDatos()
+comment3.params=
+comment3.target=void\ cargarDatos()
+comment4.params=
+comment4.target=void\ agregarAuto()
+comment5.params=
+comment5.target=void\ agregarMoto()
+comment6.params=
+comment6.target=void\ guardarDatosAutos()
+comment7.params=
+comment7.target=void\ guardarDatosMotos()
+comment8.params=
+comment8.target=java.util.HashMap\ getAutos()
+comment9.params=
+comment9.target=java.util.HashMap\ getMotos()
+numComments=11

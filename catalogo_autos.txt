@@ -1,0 +1,14 @@
+ID Auto: 1
+Automóvil: Automovil{marca=TOYOTA, carroceria=SEDAN, motor=1.6}
+ID Auto: 2
+Automóvil: Automovil{marca=HONDA, carroceria=HATCHBACK, motor=1.8}
+ID Auto: 3
+Automóvil: Automovil{marca=FORD, carroceria=PICKUP, motor=2.0}
+ID Auto: 4
+Automóvil: Automovil{marca=CHEVROLET, carroceria=SUV, motor=2.1}
+ID Auto: 5
+Automóvil: Automovil{marca=BMW, carroceria=CONVERTIBLE, motor=2.0}
+ID Auto: 6
+Automóvil: Automovil{marca=FORD, carroceria=SEDAN, motor=1.4}
+ID Auto: 7
+Automóvil: Automovil{marca=AUDI, carroceria=COUPE, motor=1.6}

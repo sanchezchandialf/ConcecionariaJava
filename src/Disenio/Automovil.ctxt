@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Automovil
+comment1.params=
+comment1.target=Automovil()
+comment2.params=marca\ carroceria\ motor\ id\ color\ mantenimiento\ kilometraje\ estado\ precio
+comment2.target=Automovil(MarcasAuto,\ CarroceriaAuto,\ double,\ int,\ Color,\ boolean,\ int,\ boolean,\ double)
+comment3.params=
+comment3.target=MarcasAuto\ getMarca()
+comment4.params=marca
+comment4.target=void\ setMarca(MarcasAuto)
+comment5.params=
+comment5.target=CarroceriaAuto\ getCarroceria()
+comment6.params=carroceria
+comment6.target=void\ setCarroceria(CarroceriaAuto)
+comment7.params=
+comment7.target=double\ getMotor()
+comment8.params=motor
+comment8.target=void\ setMotor(double)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

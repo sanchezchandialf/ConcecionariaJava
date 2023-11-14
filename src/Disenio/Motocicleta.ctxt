@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Motocicleta
+comment1.params=
+comment1.target=Motocicleta()
+comment2.params=marcasmoto\ cilindrada\ id\ color\ mantenimiento\ kilometraje\ estado\ precio
+comment2.target=Motocicleta(MarcasMoto,\ int,\ int,\ Color,\ boolean,\ int,\ boolean,\ double)
+comment3.params=
+comment3.target=MarcasMoto\ getMarcasmoto()
+comment4.params=marcasmoto
+comment4.target=void\ setMarcasmoto(MarcasMoto)
+comment5.params=
+comment5.target=int\ getCilindrada()
+comment6.params=cilindrada
+comment6.target=void\ setCilindrada(int)
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

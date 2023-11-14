@@ -1,0 +1,10 @@
+ID Moto: 1
+Motocicleta: Motocicleta{marcasmoto=HONDA, cilindrada=150}
+ID Moto: 2
+Motocicleta: Motocicleta{marcasmoto=YAMAHA, cilindrada=120}
+ID Moto: 3
+Motocicleta: Motocicleta{marcasmoto=SUZUKI, cilindrada=250}
+ID Moto: 4
+Motocicleta: Motocicleta{marcasmoto=KAWASAKI, cilindrada=150}
+ID Moto: 5
+Motocicleta: Motocicleta{marcasmoto=DUCATI, cilindrada=120}
