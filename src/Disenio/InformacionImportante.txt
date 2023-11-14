@@ -1,0 +1,12 @@
+Este programa simula el funcionamiento de una consecionaria de vehiculos (autos,camiones y motos) , el programa esta dividido en dos package respetando el patron de diseño y negocio, 
+package disenio:
+el siguiente package cuenta con todo el codigo necesario para crear y agregar vehiculos a la concecionaria, es importante tener en cuenta que en esta concecionaria LAS MOTOS NO SE REPARAN.
+los archivos que se encuentran en este package son: vehiculo,automovil,motocicleta, administracion, taller, taller auto ,deserealizacion
+
+SI USTED DESE AGREGAR AUTOS Y MOTOS A LA CONCECIONARIA DEBERA EJECUTAR EL ARCHIVO "ADMINISTRACION" alli podra ver los autos que fueron previamente agregados y tambien agregar nuevos autos
+
+Package Negocio:
+en este package existe el archivo usuario, el mismo sirve para que los usuarios deseados en comprar un vehiculo lo utilicen, en el se podran comprar vehiculos como autos y motos
+
+
+

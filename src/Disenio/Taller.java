@@ -35,14 +35,17 @@ public class Taller {
         }
     }
       
-      public static void main(String[] args) {
-        Administracion admin = new Administracion();
-        admin.cargarDatos();
+     public static void main(String[] args) {
+        try {
+            Administracion admin = new Administracion();
+            admin.cargarDatos();
 
-        Taller taller = new Taller();
-        taller.recibirAutos(admin.autos);
-        taller.imprimirAutosEnTaller();
-         
+            Taller taller = new Taller();
+            taller.recibirAutos(admin.autos);
+            taller.imprimirAutosEnTaller();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }   
 
 }
