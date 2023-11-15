@@ -6,6 +6,8 @@ public class Automovil extends Vehiculo{
   private MarcasAuto marca;
   private CarroceriaAuto carroceria;
   private double motor;
+  private static final long serialVersionUID = 1987670492596060694L; 
+
 
     public Automovil() {
     }
@@ -40,7 +42,9 @@ public class Automovil extends Vehiculo{
     public void setMotor(double motor) {
         this.motor = motor;
     }
-
+    public void actualizarEstadoMantenimiento(boolean estado) {
+        this.setMantenimiento(estado);
+    }
     @Override
     public String toString() {
         return "Automovil{" + "marca=" + marca + ", carroceria=" + carroceria + ", motor=" + motor + '}';

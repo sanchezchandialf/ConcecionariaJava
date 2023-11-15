@@ -3,6 +3,7 @@
 package Disenio;
 import java.util.HashMap;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Administracion {
     HashMap<Integer, Automovil> autos;
@@ -33,6 +34,7 @@ public class Administracion {
         guardarDatos();
         }
     }
+
 
     public void guardarDatos() {
         try (FileOutputStream fos = new FileOutputStream("autos.dat");
@@ -66,57 +68,196 @@ public class Administracion {
         }
     }
 
-    public void agregarAuto() {
-    System.out.println("Por favor, ingresa los detalles del auto:");
-    System.out.println("Marca (opciones: TOYOTA, HONDA, FORD, CHEVROLET, BMW, MERCEDES, AUDI, VOLKSWAGEN):");
-    MarcasAuto marca = MarcasAuto.valueOf(scanner.nextLine().toUpperCase());
-    System.out.println("Carrocería (opciones: SEDAN, HATCHBACK, SUV, PICKUP, COUPE, CONVERTIBLE):");
-    CarroceriaAuto carroceria = CarroceriaAuto.valueOf(scanner.nextLine().toUpperCase());
-    System.out.println("Motor:");
-    double motor = Double.parseDouble(scanner.nextLine());
-    System.out.println("ID:");
-    int id = Integer.parseInt(scanner.nextLine());
-    System.out.println("Color (opciones: ROJO, AZUL, VERDE, AMARILLO, NEGRO, BLANCO, NARANJA, MORADO, ROSA, MARRON):");
-    Color color = Color.valueOf(scanner.nextLine().toUpperCase());
-    System.out.println("¿Es nuevo? (true/false):");
-    boolean nuevo = Boolean.parseBoolean(scanner.nextLine());
-    System.out.println("Kilometraje:");
-    int kilometraje = Integer.parseInt(scanner.nextLine());
-    System.out.println("¿Está disponible? (true/false):");
-    boolean disponible = Boolean.parseBoolean(scanner.nextLine());
-    System.out.println("Precio:");
-    double precio = Double.parseDouble(scanner.nextLine());
-    Automovil auto = new Automovil(marca, carroceria, motor, id, color, nuevo, kilometraje, disponible, precio);
-    autos.put(id, auto);
-    System.out.println("Se ha agregado el auto con ID: " + id);
-    guardarDatos();  // Guarda los datos después de agregar un auto
-    guardarDatosAutos();
+ public void agregarAuto() {
+    try {
+        System.out.println("Por favor, ingresa los detalles del auto:");
+        
+        System.out.println("Marca (opciones: TOYOTA, HONDA, FORD, CHEVROLET, BMW, MERCEDES, AUDI, VOLKSWAGEN):");
+        String marcaStr = scanner.nextLine().toUpperCase();
+        MarcasAuto marca;
+        try {
+            marca = MarcasAuto.valueOf(marcaStr);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Has ingresado una marca inválida. Por favor, intenta de nuevo.");
+            return;
+        }
+        
+        System.out.println("Carrocería (opciones: SEDAN, HATCHBACK, SUV, PICKUP, COUPE, CONVERTIBLE):");
+        String carroceriaStr = scanner.nextLine().toUpperCase();
+        CarroceriaAuto carroceria;
+        try {
+            carroceria = CarroceriaAuto.valueOf(carroceriaStr);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Has ingresado una carrocería inválida. Por favor, intenta de nuevo.");
+            return;
+        }
+
+        System.out.println("Motor:");
+        String motorStr = scanner.nextLine();
+        double motor;
+        try {
+            motor = Double.parseDouble(motorStr);
+        } catch (NumberFormatException e) {
+            System.out.println("Has ingresado un valor inválido para 'motor'. Por favor, intenta de nuevo.");
+            return;
+        }
+
+        System.out.println("ID:");
+        String idStr = scanner.nextLine();
+        int id;
+        try {
+            id = Integer.parseInt(idStr);
+        } catch (NumberFormatException e) {
+            System.out.println("Has ingresado un valor inválido para 'ID'. Por favor, intenta de nuevo.");
+            return;
+        }
+        
+        System.out.println("Color (opciones: ROJO, AZUL, VERDE, AMARILLO, NEGRO, BLANCO, NARANJA, MORADO, ROSA, MARRON):");
+        String colorStr = scanner.nextLine().toUpperCase();
+        Color color;
+        try {
+            color = Color.valueOf(colorStr);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Has ingresado un color inválido. Por favor, intenta de nuevo.");
+            return;
+        }
+        
+        System.out.println("¿Es nuevo? (true/false):");
+        String nuevoStr = scanner.nextLine();
+        boolean nuevo;
+        try {
+            nuevo = Boolean.parseBoolean(nuevoStr);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Has ingresado un valor inválido para 'nuevo'. Por favor, intenta de nuevo.");
+            return;
+        }
+
+        System.out.println("Kilometraje:");
+        String kilometrajeStr = scanner.nextLine();
+        int kilometraje;
+        try {
+            kilometraje = Integer.parseInt(kilometrajeStr);
+        } catch (NumberFormatException e) {
+            System.out.println("Has ingresado un kilometraje inválido. Por favor, intenta de nuevo.");
+            return;
+        }
+        
+        System.out.println("¿Está disponible? (true/false):");
+        String disponibleStr = scanner.nextLine();
+        boolean disponible;
+        try {
+            disponible = Boolean.parseBoolean(disponibleStr);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Has ingresado un valor inválido para 'disponible'. Por favor, intenta de nuevo.");
+            return;
+        }
+        
+        System.out.println("Precio:");
+        String precioStr = scanner.nextLine();
+        double precio;
+        try {
+            precio = Double.parseDouble(precioStr);
+        } catch (NumberFormatException e) {
+            System.out.println("Has ingresado un precio inválido. Por favor, intenta de nuevo.");
+            return;
+        }
+        
+        Automovil auto = new Automovil(marca, carroceria, motor, id, color, nuevo, kilometraje, disponible, precio);
+        autos.put(id, auto);
+        System.out.println("Se ha agregado el auto con ID: " + id);
+        guardarDatos();  // Guarda los datos después de agregar un auto
+        guardarDatosAutos();
+    } catch (Exception e) {
+        System.out.println("Ha ocurrido un error. Por favor, intenta de nuevo.");
+    }
 }
+
+
 
 public void agregarMoto() {
     System.out.println("Por favor, ingresa los detalles de la moto:");
+    
     System.out.println("Marca (opciones: SUZUKI, KAWASAKI, DUCATI, HARLEY_DAVIDSON):");
-    MarcasMoto marca = MarcasMoto.valueOf(scanner.nextLine().toUpperCase());
+    String marcaStr = scanner.nextLine().toUpperCase();
+    MarcasMoto marca;
+    try {
+        marca = MarcasMoto.valueOf(marcaStr);
+    } catch (IllegalArgumentException e) {
+        System.out.println("Marca inválida. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     System.out.println("Cilindrada:");
-    int cilindrada = Integer.parseInt(scanner.nextLine());
+    int cilindrada;
+    try {
+        cilindrada = Integer.parseInt(scanner.nextLine());
+    } catch (NumberFormatException e) {
+        System.out.println("Cilindrada inválida. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     System.out.println("ID:");
-    int id = Integer.parseInt(scanner.nextLine());
+    int id;
+    try {
+        id = Integer.parseInt(scanner.nextLine());
+    } catch (NumberFormatException e) {
+        System.out.println("ID inválido. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     System.out.println("Color (opciones: ROJO, AZUL, VERDE, AMARILLO, NEGRO, BLANCO, NARANJA, MORADO, ROSA, MARRON):");
-    Color color = Color.valueOf(scanner.nextLine().toUpperCase());
+    String colorStr = scanner.nextLine().toUpperCase();
+    Color color;
+    try {
+        color = Color.valueOf(colorStr);
+    } catch (IllegalArgumentException e) {
+        System.out.println("Color inválido. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     System.out.println("¿Es nueva? (true/false):");
-    boolean nuevo = Boolean.parseBoolean(scanner.nextLine());
+    boolean nuevo;
+    try {
+        nuevo = Boolean.parseBoolean(scanner.nextLine());
+    } catch (IllegalArgumentException e) {
+        System.out.println("Valor inválido. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     System.out.println("Kilometraje:");
-    int kilometraje = Integer.parseInt(scanner.nextLine());
+    int kilometraje;
+    try {
+        kilometraje = Integer.parseInt(scanner.nextLine());
+    } catch (NumberFormatException e) {
+        System.out.println("Kilometraje inválido. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     System.out.println("¿Está disponible? (true/false):");
-    boolean disponible = Boolean.parseBoolean(scanner.nextLine());
+    boolean disponible;
+    try {
+        disponible = Boolean.parseBoolean(scanner.nextLine());
+    } catch (IllegalArgumentException e) {
+        System.out.println("Valor inválido. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     System.out.println("Precio:");
-    double precio = Double.parseDouble(scanner.nextLine());
+    double precio;
+    try {
+        precio = Double.parseDouble(scanner.nextLine());
+    } catch (NumberFormatException e) {
+        System.out.println("Precio inválido. Por favor, intenta de nuevo.");
+        return;
+    }
+    
     Motocicleta moto = new Motocicleta(marca, cilindrada, id, color, nuevo, kilometraje, disponible, precio);
     motos.put(id, moto);
     System.out.println("Se ha agregado la moto con ID: " + id);
     guardarDatos();  // Guarda los datos después de agregar una moto
     guardarDatosMotos();
 }
+
 
 public void guardarDatosAutos() {
     try (FileOutputStream fos = new FileOutputStream("autos.dat");
@@ -145,17 +286,17 @@ public void guardarDatosMotos() {
     public static void main(String[] args) {
         Administracion admin = new Administracion();
          admin.cargarDatos();
-
+         Taller taller = new Taller();
     // Aquí puedes agregar código para visualizar los datos cargados
     // Por ejemplo, puedes imprimir el contenido de los HashMaps autos y motos
     System.out.println(admin.autos);
     System.out.println(admin.motos);
-     while (true) {
-        System.out.println("Por favor, elige una opción:");
-        System.out.println("1. Agregar auto");
-        System.out.println("2. Agregar moto");
-        System.out.println("3. Salir");
-       String opcion = admin.scanner.nextLine();
+    while (true) {
+    System.out.println("Por favor, elige una opción:");
+    System.out.println("1. Agregar auto");
+    System.out.println("2. Agregar moto");
+    System.out.println("3. Salir");
+    String opcion = admin.scanner.nextLine();
 
         switch (opcion) {
             case "1":
@@ -165,7 +306,7 @@ public void guardarDatosMotos() {
             case "2":
                 admin.agregarMoto();
                 System.out.println(admin.motos);
-                break;
+                break;     
             case "3":
                 System.out.println("Gracias por usar nuestro servicio. ¡Hasta luego!");
                 return;
@@ -173,7 +314,7 @@ public void guardarDatosMotos() {
                 System.out.println("Opción no válida. Por favor, intenta de nuevo.");
                 break;
         }
-    }
+}
    
 } 
 }

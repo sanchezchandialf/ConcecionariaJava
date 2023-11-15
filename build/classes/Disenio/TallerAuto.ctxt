@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=TallerAuto
+comment1.params=taller
+comment1.target=TallerAuto(Taller)
+comment10.params=
+comment10.target=void\ realizarServicios()
+comment2.params=
+comment2.target=void\ recibirAutos()
+comment3.params=
+comment3.target=void\ cambioAceite()
+comment4.params=
+comment4.target=void\ inspeccionSeguridad()
+comment5.params=
+comment5.target=void\ rellenoNiveles()
+comment6.params=
+comment6.target=void\ liquidoLimpiaparabrisas()
+comment7.params=
+comment7.target=void\ diagnosticoComputadora()
+comment8.params=
+comment8.target=void\ rotacionLlantas()
+comment9.params=
+comment9.target=void\ cambioFiltroPolvoPolen()
+numComments=11

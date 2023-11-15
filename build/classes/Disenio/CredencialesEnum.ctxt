@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=CredencialesEnum
-comment1.params=username\ password
-comment1.target=CredencialesEnum(java.lang.String,\ java.lang.String)
-comment2.params=
-comment2.target=java.lang.String\ getUsername()
-comment3.params=
-comment3.target=java.lang.String\ getPassword()
-numComments=4
