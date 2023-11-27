@@ -1,4 +1,12 @@
 package Disenio;
+/*
+Este programa realiza la deserialización de datos de archivos binarios de autos (autos.dat)
+y motocicletas (motos.dat), convirtiéndolos en archivos de texto para generar catálogos
+de autos (catalogo_autos.txt) y motos (catalogo_motos.txt).
+
+Los archivos de texto contendrán detalles detallados de los vehículos almacenados, 
+incluyendo ID del vehículo seguido de la información correspondiente del automóvil o moto.
+*/
 
 import java.io.*;
 import java.util.HashMap;

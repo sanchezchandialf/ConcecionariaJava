@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.io.*;
-
-public class Taller {
+//LAS MOTOS NO INGRESAN AL TALLER 
+class Taller implements Service{
     private Queue<Automovil> colaAutosEnTaller;
     private ArrayList<Integer> autosEnTallerIDs;
     private static final String FILE_NAME = "autosEnTallerIDs.txt"; // Nombre del archivo donde se guardarán las IDs
@@ -62,7 +62,7 @@ public class Taller {
         }
 
         if (!algunAutoEnTaller) {
-            System.out.println("El taller está vacio. No se agregaron autos para servicio.");
+            System.out.println("El taller esta vacio. No se agregaron autos para servicio.");
         }
 
         guardarIDs(); // Guardar las IDs en el archivo después de recibir los autos
@@ -81,43 +81,43 @@ public class Taller {
             actualizarEstadoEnHashMap(auto, autos);
         }
     }
-
-    private void cambioAceite(Automovil auto) {
+   
+    public void cambioAceite(Automovil auto) {
         System.out.println("Cambiando aceite al auto con ID: " + auto.getId());
         // Lógica para cambiar el aceite
     }
 
-    private void inspeccionSeguridad(Automovil auto) {
+    public void inspeccionSeguridad(Automovil auto) {
         System.out.println("Inspeccionando seguridad del auto con ID: " + auto.getId());
         // Lógica para la inspección de seguridad
     }
 
-    private void rellenoNiveles(Automovil auto) {
+    public void rellenoNiveles(Automovil auto) {
         System.out.println("Rellenando niveles del auto con ID: " + auto.getId());
         // Lógica para rellenar niveles
     }
 
-    private void liquidoLimpiaparabrisas(Automovil auto) {
-        System.out.println("Aniadiendo líquido limpiaparabrisas al auto con ID: " + auto.getId());
+    public void liquidoLimpiaparabrisas(Automovil auto) {
+        System.out.println("Añadiendo líquido limpiaparabrisas al auto con ID: " + auto.getId());
         // Lógica para añadir líquido limpiaparabrisas
     }
 
-    private void diagnosticoComputadora(Automovil auto) {
-        System.out.println("Realizando diagnostico por computadora al auto con ID: " + auto.getId());
+    public void diagnosticoComputadora(Automovil auto) {
+        System.out.println("Realizando diagnóstico por computadora al auto con ID: " + auto.getId());
         // Lógica para el diagnóstico por computadora
     }
 
-    private void rotacionLlantas(Automovil auto) {
+    public void rotacionLlantas(Automovil auto) {
         System.out.println("Rotando llantas del auto con ID: " + auto.getId());
         // Lógica para la rotación de llantas
     }
 
-    private void cambioFiltroPolvoPolen(Automovil auto) {
+    public void cambioFiltroPolvoPolen(Automovil auto) {
         System.out.println("Cambiando filtro de polvo/polen al auto con ID: " + auto.getId());
         // Lógica para cambiar el filtro de polvo/polen
     }
-
-    private void realizarProcedimientos(Automovil auto) {
+    
+    public void realizarProcedimientos(Automovil auto) {
         cambioAceite(auto);
         inspeccionSeguridad(auto);
         rellenoNiveles(auto);
@@ -141,8 +141,10 @@ public class Taller {
 
             Taller taller = new Taller();
             HashMap<Integer, Automovil> autos = admin.getAutos(); // Obtener el HashMap de autos
+            System.out.println("----------------------------------------------------");
+            System.out.println("BIENVENIDOS AL TALLER DE AUTOS DE LA CONSECIONARIA ");
             taller.recibirAutos(autos);
-
+            
             taller.realizarServicios(autos); // Pasar el HashMap de autos a realizarServicios
         } catch (Exception e) {
             e.printStackTrace();

@@ -5,6 +5,14 @@ import java.util.HashMap;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+/* 
+Este programa administra vehículos, permitiendo al usuario agregar autos y motocicletas.
+Se guardan los datos en archivos para conservar la información entre sesiones.
+Para agregar un vehículo, se solicitan detalles como marca, tipo, motor, ID, color, estado,
+kilometraje, disponibilidad y precio, según el tipo de vehículo seleccionado.
+ES POSIBLE MODIFICAR UN VEHICULO SOLO BASTA CON INGRESAR UNA ID QUE YA ESTE EN USO A LA HORA EN LA QUE EL PROGRAMA SOLICITE LOS DATOS
+*/
+
 public class Administracion {
     HashMap<Integer, Automovil> autos;
     private HashMap<Integer, Motocicleta> motos;
@@ -93,6 +101,7 @@ public class Administracion {
         }
 
         System.out.println("Motor:");
+        System.out.println("Referido a la cilindra");
         String motorStr = scanner.nextLine();
         double motor;
         try {
@@ -287,12 +296,10 @@ public void guardarDatosMotos() {
         Administracion admin = new Administracion();
          admin.cargarDatos();
          Taller taller = new Taller();
-    // Aquí puedes agregar código para visualizar los datos cargados
-    // Por ejemplo, puedes imprimir el contenido de los HashMaps autos y motos
     System.out.println(admin.autos);
     System.out.println(admin.motos);
     while (true) {
-    System.out.println("Por favor, elige una opción:");
+    System.out.println("Por favor, elige una opcion:");
     System.out.println("1. Agregar auto");
     System.out.println("2. Agregar moto");
     System.out.println("3. Salir");
@@ -311,7 +318,7 @@ public void guardarDatosMotos() {
                 System.out.println("Gracias por usar nuestro servicio. ¡Hasta luego!");
                 return;
             default:
-                System.out.println("Opción no válida. Por favor, intenta de nuevo.");
+                System.out.println("Opcion no valida. Por favor, intenta de nuevo.");
                 break;
         }
 }
